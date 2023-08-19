@@ -14,7 +14,7 @@ cookie = driver.find_element(By.ID, "cookie")
 cookie_count = driver.find_element(By.XPATH, '//*[@id="money"]')
 
 # timings
-game_time = time.time() + 60 * 5
+game_time = time.time() + 60 * 1
 five_sec_timer = time.time() + 5
 
 # finding the price divs
@@ -72,4 +72,7 @@ while True:
 
     if time.time() > game_time:
         # if present time is over than the game time
+        # cookies per second
+        cookies_per_second = driver.find_element(By.XPATH, '//*[@id="cps"]').text
+        print(cookies_per_second)
         break
